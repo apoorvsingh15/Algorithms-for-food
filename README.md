@@ -9,6 +9,12 @@ The sole reason for this repo is quick and effective learning. It is an initiati
 - Actually, expect less as we are a touch lazy.
 - The programming language will be mainly javascript, but we are free to deliver algos and code in any language of our choice.
 
+# Rules
+
+- Each algo should be delivered in a separate folder.
+- The folder name should be clear and the folder should contain a readme regarding the algo.
+- The actual code file and readme are a must, other things regarding the algo can be included, its entirely developer's choice.
+
 # License
 
 MIT license because why the hell not, but you can use the code anywhere you like, we are not going to claim anything.

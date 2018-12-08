@@ -6,7 +6,11 @@ The graph object which contains three types of values.
 - adjacencies => a list of relationships between the nodes
 - edges       => an object containing edjancies
 
-Example of a graph object
+For the graph
+
+![alt text](https://github.com/apoorvsingh15/Algorithms-for-food/assets/graph.jpg" Example")
+
+The graph object will be
 
 ```json
 {

@@ -8,7 +8,7 @@ The graph object which contains three types of values.
 
 For the graph
 
-![alt text](https://github.com/apoorvsingh15/Algorithms-for-food/blob/master/assets/graph.jpg" Example")
+[![solarized dualmode](https://github.com/apoorvsingh15/Algorithms-for-food/blob/master/assets/graph.jpg)](#features)
 
 The graph object will be
 

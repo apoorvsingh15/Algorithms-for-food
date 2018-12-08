@@ -1,0 +1,19 @@
+{
+  "name": "algorithms-for-food",
+  "version": "1.0.0",
+  "description": "The sole reason for this repo is quick and effective learning. It is an initiative taken by two friends to make their miserable lives better through coding :p",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apoorvsingh15/Algorithms-for-food.git"
+  },
+  "author": "Apoorv Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apoorvsingh15/Algorithms-for-food/issues"
+  },
+  "homepage": "https://github.com/apoorvsingh15/Algorithms-for-food#readme"
+}

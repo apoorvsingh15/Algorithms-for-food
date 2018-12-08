@@ -31,71 +31,53 @@ The graph object will be
       "value": "E"
     }
   ],
-  "adjacencies": [
-    {
-      "1": {
-        "from": "A",
-        "to": "B",
-        "weight": 4
-      }
+  "adjacencies": {
+    "1": {
+      "from": "A",
+      "to": "B",
+      "weight": 4
     },
-    {
-      "2": {
-        "from": "A",
-        "to": "C",
-        "weight": 2
-      }
+    "2": {
+      "from": "A",
+      "to": "C",
+      "weight": 2
     },
-    {
-      "3": {
-        "from": "C",
-        "to": "B",
-        "weight": 1
-      }
+    "3": {
+      "from": "C",
+      "to": "B",
+      "weight": 1
     },
-    {
-      "4": {
-        "from": "C",
-        "to": "D",
-        "weight": 4
-      }
+    "4": {
+      "from": "C",
+      "to": "D",
+      "weight": 4
     },
-    {
-      "5": {
-        "from": "C",
-        "to": "E",
-        "weight": 5
-      }
+    "5": {
+      "from": "C",
+      "to": "E",
+      "weight": 5
     },
-    {
-      "6": {
-        "from": "B",
-        "to": "C",
-        "weight": 3
-      }
+    "6": {
+      "from": "B",
+      "to": "C",
+      "weight": 3
     },
-    {
-      "7": {
-        "from": "B",
-        "to": "E",
-        "weight": 3
-      }
+    "7": {
+      "from": "B",
+      "to": "E",
+      "weight": 3
     },
-    {
-      "8": {
-        "from": "B",
-        "to": "D",
-        "weight": 2
-      }
+    "8": {
+      "from": "B",
+      "to": "D",
+      "weight": 2
     },
-    {
-      "9": {
-        "from": "E",
-        "to": "D",
-        "weight": 1
-      }
+    "9": {
+      "from": "E",
+      "to": "D",
+      "weight": 1
     }
-  ],
+  },
   "edges": {
     "A": [
       "1",

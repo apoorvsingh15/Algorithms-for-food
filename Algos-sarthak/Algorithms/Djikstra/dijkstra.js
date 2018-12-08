@@ -2,25 +2,58 @@
     Djikstra Algorithm
 */
 
-let Graph = require('../../DataStructures/Graph/Graph');
 
-let graph = new Graph();
+// Implementation
+
+function dijkstra(start, graph) {
+    let nodes = graph.nodes.map(node => node.value);
+    let edges = graph.edges;
+    let adjacencies = graph.adjacencies;
+
+    if (!nodes.includes(start)) {
+        console.log("The starting node was not found");
+    }
+    else {
+
+        let startingEdges = edges[start];
+        if (startingEdges) {
+            let choose;
+            let weight = adjacencies[startingEdges[0]].weight;
+            for (let i = 0; i < startingEdges.length; i++) {
+                let adjacency = adjacencies[startingEdges[i]];
+
+                if (weight >= adjacency.weight) {
+                    choose = adjacency
+                }
+            }
+            console.log(choose);
+            if (choose.to === 'E') {
+                return choose;
+            } else {
+                return dijkstra(choose.to, graph);
+            }
+        }
+        else{
+            return "no exit"
+        }
+        // console.log(edge);        
+    }
+}
 
 
-graph.addNode('A');
-graph.addNode('B');
-graph.addNode('C');
-graph.addNode('D');
-graph.addNode('E');
+function execute() {
 
-graph.addAdjacency('A','B',4);
-graph.addAdjacency('A','C',2);
-graph.addAdjacency('C','B',1);
-graph.addAdjacency('C','D',4);
-graph.addAdjacency('C','E',5);
-graph.addAdjacency('B','C',3);
-graph.addAdjacency('B','E',3);
-graph.addAdjacency('B','D',2);
-graph.addAdjacency('E','D',1);
+    let graph = require('../../DataStructures/Graph/GraphImpl');
 
-console.log(JSON.stringify(graph));
+    // The value of the starting node
+    let start = 'A';
+
+    // Find the shortest path to all the other nodes using dijkstra's algorithm
+    let mst = dijkstra(start, graph);
+
+    console.log(mst);
+}
+
+module.exports = {
+    execute
+}

@@ -17,13 +17,13 @@ class Node {
     The graph object which contains three types of values.
 
     - nodes       => a list of nodes in the graph
-    - adjacencies => a list of relationships between the nodes
+    - adjacencies => an object containing relationships between the nodes
     - edges       => an object containing edjancies
 */
 class Graph {
     constructor() {
         this.nodes = [];
-        this.adjacencies = [];
+        this.adjacencies = {};
         this.edges = {};
     }
 
@@ -37,14 +37,12 @@ class Graph {
         if (!(nodes.includes(from) && nodes.includes(to))) return;
 
         let adjacency = {};
-        let index = (this.adjacencies.length + 1).toString();
-        adjacency[index] = {
+        let index = (Object.keys(this.adjacencies).length + 1).toString();
+        this.adjacencies[index] = {
             from,
             to,
             weight
         };
-
-        this.adjacencies.push(adjacency);
 
         for (let i = 0; i < nodes.length; i++) {
             let current = nodes[i];

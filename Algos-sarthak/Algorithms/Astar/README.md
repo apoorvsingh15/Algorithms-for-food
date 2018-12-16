@@ -44,4 +44,5 @@ where v is the total number of vertices.
 # References
 
 https://www.youtube.com/watch?v=ySN5Wnu88nE
+
 A* (A Star) Search Algorithm - Computerphile

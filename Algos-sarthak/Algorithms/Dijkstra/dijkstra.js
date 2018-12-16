@@ -8,10 +8,13 @@
 function dijkstra(start,graph){
     let priorityQueue = [];
     
-    let nodes = graph.nodes.map(node => node.value);
+    // let nodes = graph.nodes.map(node => node.value);
     let distances = {};
 
-    nodes.forEach(node => distances[node] = 999);
+    for (node in graph.nodes){
+        distances[node] = 999;
+    }
+    // nodes.forEach(node => distances[node] = 999);
     
     distances[start.value] = 0;
     priorityQueue.push(start);
@@ -47,7 +50,7 @@ function dijkstra(start,graph){
                     distances[edge.to] = totalWeight;
                 }
             });
-    
+            
             // Push the smallest value in the priority queue
             priorityQueue.push(smallest);
         }
@@ -56,7 +59,7 @@ function dijkstra(start,graph){
 }
 
 
-function execute() {
+function execute(callback) {
 
     let graph = require('../../DataStructures/Graph/GraphImpl');
 
@@ -69,14 +72,19 @@ function execute() {
     let mst;
 
     // Find the shortest path to all the other nodes using dijkstra's algorithm
-    let nodes = graph.nodes.map(node => node.value);
-    if (nodes.includes(start.value)){
+    if (graph.nodes[start.value]){
         mst = dijkstra(start, graph);
-        console.log("The distances of each of the nodes from the starting point are: ");
-        console.log(mst);
+        callback({ 
+            message : "The distances of each of the nodes from the starting point are: ",
+            data : JSON.stringify(mst),
+            type : "success"
+        });
     }
     else {
-        console.log("Starting value is node a part of the graph");
+        callback({
+            message: "Starting value is not a part of the graph", 
+            type: "error"
+        });
     }
 }
 

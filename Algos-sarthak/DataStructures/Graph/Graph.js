@@ -25,20 +25,20 @@ class Node {
 */
 class Graph {
     constructor() {
-        this.nodes = [];
+        this.nodes = {};
         this.adjacencies = {};
         this.edges = {};
     }
 
     addNode(value, weight) {
         let node = new Node(value, weight);
-        this.nodes.push(node);
+        this.nodes[value] = node;
     }
 
     addAdjacency(from, to, weight) {
-        let nodes = this.nodes.map(node => node.value);
+        let nodes = this.nodes;
 
-        if (!( nodes.includes(from) && nodes.includes(to) )) return;
+        if (!( nodes[from] && nodes[to] )) return;
 
         let adjacency = {
             from,
@@ -49,8 +49,8 @@ class Graph {
         let index = (Object.keys(this.adjacencies).length + 1).toString();
         this.adjacencies[index] = adjacency;
 
-        for (let i = 0; i < nodes.length; i++) {
-            let current = nodes[i];
+        for (let node in nodes) {
+            let current = node;
 
             if (current == from) {
                 if (!this.edges[current])   this.edges[current] = [index];

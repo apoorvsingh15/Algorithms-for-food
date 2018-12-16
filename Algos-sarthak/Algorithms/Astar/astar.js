@@ -1,33 +1,51 @@
+/*
+    A Star Search Algorithm
+*/
+
+
+// Implementation
 function astar(start, graph){
     let priorityQueue = [];
     
-    let nodes = graph.nodes.map(node => node.value);
+    // Get all the nodes
+    let nodes = graph.nodes;
     let distances = {};
 
-    nodes.forEach(node => distances[node] = 999);
+    // Initialize the distances of all the nodes to be a finite value such as 999
+    for (node in nodes){
+        distances[node] = 999;
+    }
 
+    // Distance from current node is 0
     distances[start.value] = 0;
+
+    // Push the starting node into the priority queue
     priorityQueue.push(start);
 
+    // While priority queue is not empty
     while (priorityQueue.length != 0){
         let top = priorityQueue[0];
         
+        // Remove the top
+        priorityQueue = priorityQueue.slice(1,priorityQueue.length);
+
         // Current weight
         let f = top.weight;
 
         // Get edges
         let edges = graph.edges[top.value];
 
-        if (!edges){
+        if (!edges || edges.length == 0){
             console.log("dd")
         }
         else{
 
-            let firstEdge = graph.adjacencies[edgesOfTop[0]];
+            // If edges exist find the smallest node with f + g + h
+            let firstEdge = graph.adjacencies[edges[0]];
     
             let smallest = {
                 value: firstEdge.to,
-                weight: f + graph.adjacencies[edge].weight + h;
+                weight: f + firstEdge.weight + graph.nodes[firstEdge.to].weight
             }
 
             edges.forEach(edge => {
@@ -35,12 +53,9 @@ function astar(start, graph){
                 let g = adjacency.weight;
     
                 let h;
-                for (let i=0; i < graph.nodes.length; i++){
-                    let node = graph.nodes[i];
-                    if (node.value === adjacency.to){
-                        h = node.weight;
-                        break;   
-                    }
+
+                if (graph.nodes[adjacency.to]){
+                    h = graph.nodes[adjacency.to].weight;
                 }
 
                 let currWeight = f + g + h;
@@ -57,10 +72,14 @@ function astar(start, graph){
                 }
                 
             });
+
+            // Push the smallest node in the priority queue
+            priorityQueue.push(smallest);
         }
         
     }
 
+    return distances;
 
 }
 
@@ -71,15 +90,8 @@ function execute(callback) {
     }
 
     start.weight = 0;
-    let nodes = graph.nodes;
-
-    let exists = false;
-    nodes.forEach(node =>{
-        if (node.value === start.value)
-            exists = true;
-    })
-
-    if (exists){
+    
+    if (graph.nodes[start.value]){
         mst = astar(start, graph);
         callback({ 
             message : "The distances of each of the nodes from the starting point are: ",

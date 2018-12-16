@@ -31,7 +31,7 @@ else{
         }
         case "graphimpl":{
             let graphImpl = require('./DataStructures/Graph/GraphImpl');
-            console.log(graphImpl);
+            console.log(JSON.stringify(graphImpl));
             break;
         }
         default:

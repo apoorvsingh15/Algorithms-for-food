@@ -2,8 +2,8 @@
 
 The graph object which contains three types of values.
 
-- nodes       => a list of nodes in the graph
-- adjacencies => a list of relationships between the nodes
+- nodes       => an object containing nodes in the graph
+- adjacencies => an object containing relationships between the nodes
 - edges       => an object containing edjancies
 
 For the graph
@@ -14,23 +14,28 @@ The graph object will be
 
 ```json
 {
-  "nodes": [
-    {
-      "value": "A"
+  "nodes": {
+    "A": {
+      "value": "A",
+      "weight": 9
     },
-    {
-      "value": "B"
+    "B": {
+      "value": "B",
+      "weight": 2
     },
-    {
-      "value": "C"
+    "C": {
+      "value": "C",
+      "weight": 6
     },
-    {
-      "value": "D"
+    "D": {
+      "value": "D",
+      "weight": 1
     },
-    {
-      "value": "E"
+    "E": {
+      "value": "E",
+      "weight": 5
     }
-  ],
+  },
   "adjacencies": {
     "1": {
       "from": "A",

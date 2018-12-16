@@ -4,11 +4,11 @@
 let Graph = require('./Graph');
 let graph = new Graph();
 
-graph.addNode('A');
-graph.addNode('B');
-graph.addNode('C');
-graph.addNode('D');
-graph.addNode('E');
+graph.addNode('A',10);
+graph.addNode('B',11);
+graph.addNode('C',12);
+graph.addNode('D',13);
+graph.addNode('E',14);
 
 graph.addAdjacency('A','B',4);
 graph.addAdjacency('A','C',2);

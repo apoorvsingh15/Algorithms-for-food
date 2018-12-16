@@ -8,8 +8,11 @@
     This object can be modified further to contain values such as the weight of the node.
 */
 class Node {
-    constructor(value) {
+    constructor(value, weight) {
         this.value = value;
+
+        // Weight of the node for a star search
+        this.weight = weight;
     }
 };
 
@@ -27,33 +30,31 @@ class Graph {
         this.edges = {};
     }
 
-    addNode(value) {
-        let node = new Node(value);
+    addNode(value, weight) {
+        let node = new Node(value, weight);
         this.nodes.push(node);
     }
 
     addAdjacency(from, to, weight) {
         let nodes = this.nodes.map(node => node.value);
-        if (!(nodes.includes(from) && nodes.includes(to))) return;
 
-        let adjacency = {};
-        let index = (Object.keys(this.adjacencies).length + 1).toString();
-        this.adjacencies[index] = {
+        if (!( nodes.includes(from) && nodes.includes(to) )) return;
+
+        let adjacency = {
             from,
             to,
             weight
         };
+        
+        let index = (Object.keys(this.adjacencies).length + 1).toString();
+        this.adjacencies[index] = adjacency;
 
         for (let i = 0; i < nodes.length; i++) {
             let current = nodes[i];
 
             if (current == from) {
-                if (!this.edges[current]) {
-                    this.edges[current] = [index];
-                }
-                else {
-                    this.edges[current].push(index);
-                }
+                if (!this.edges[current])   this.edges[current] = [index];
+                else this.edges[current].push(index);
             }
         }
     }

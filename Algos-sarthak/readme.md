@@ -17,3 +17,4 @@ You can find my algorithm code in this list
 |Date              |Algorithm                                                 |Code
 |------------------|----------------------------------------------------------|----------
 | 09-12-2018       | Dijkstra's Algorithm                                     |dijkstra
+| 16-12-2018       | A Star Search Algorithm                                  |astar

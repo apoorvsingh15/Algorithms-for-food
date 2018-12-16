@@ -15,6 +15,11 @@ else{
             dijkstra.execute();
             break;
         }
+        case "astar": {
+            let astar = require('./Algorithms/Astar/astar');
+            astar.execute();
+            break;
+        }
         default:
             console.log("Sorry! I have not written this algorithm yet :(");
 

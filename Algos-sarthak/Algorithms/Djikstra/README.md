@@ -26,3 +26,7 @@ For the graph
 
 The shortest distance of each of the nodes from the starting point are:
 > { A: 0, B: 3, C: 2, D: 5, E: 6 }
+
+# References
+
+https://www.youtube.com/watch?v=GazC3A4OQTE

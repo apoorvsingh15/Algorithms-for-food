@@ -36,7 +36,7 @@ function astar(start, graph){
         let edges = graph.edges[top.value];
 
         if (!edges || edges.length == 0){
-            console.log("dd")
+            console.log("No edges further from "+top.value);
         }
         else{
 
@@ -72,13 +72,12 @@ function astar(start, graph){
                 }
                 
             });
-
+            
             // Push the smallest node in the priority queue
             priorityQueue.push(smallest);
         }
         
     }
-
     return distances;
 
 }

@@ -34,6 +34,11 @@ else{
             console.log(JSON.stringify(graphImpl));
             break;
         }
+        case "bfsdfs":{
+            let bfsdfs = require('./Algorithms/BFSDFS/bfsdfs');
+            bfsdfs.execute(result => console.log(result));
+            break;
+        }
         default:
             console.log("Sorry! I have not written this algorithm yet :(");
 

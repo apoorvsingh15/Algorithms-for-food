@@ -18,3 +18,4 @@ You can find my algorithm code in this list
 |------------------|----------------------------------------------------------|----------
 | 09-12-2018       | Dijkstra's Algorithm                                     |dijkstra
 | 16-12-2018       | A Star Search Algorithm                                  |astar
+| 23-12-2018       | Breadth First & Depth First Search for a graph           |bfsdfs

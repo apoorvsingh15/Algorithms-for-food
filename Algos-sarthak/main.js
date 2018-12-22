@@ -36,7 +36,7 @@ else{
         }
         case "bfsdfs":{
             let bfsdfs = require('./Algorithms/BFSDFS/bfsdfs');
-            bfsdfs.execute(result => console.log(result));
+            bfsdfs.execute(result => print(result));
             break;
         }
         default:

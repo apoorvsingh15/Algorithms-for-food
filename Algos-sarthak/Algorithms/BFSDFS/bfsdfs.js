@@ -1,7 +1,9 @@
 function bfs(start,graph){
     let { value } = start;
     let nodes = [];
+
     nodes.push(value);
+
     for (let i=1; i <= nodes.length; i++ ){
         let value = nodes[i-1];
         let edges = graph.edges[value];
@@ -14,12 +16,10 @@ function bfs(start,graph){
         }
     }
 
-    return {
-        nodes
-    };
+    return nodes;
 }
 
-function dfs(start,graph,traversed){
+function dfs(start,graph,nodes){
     let { value } = start;
     let edges = graph.edges[value];
     
@@ -30,17 +30,16 @@ function dfs(start,graph,traversed){
                 value : adjacencies.to
             }
             
-            if (! traversed.includes(start.value)){
-                traversed.push(start.value);
-                dfs(start,graph,traversed);
+            if (! nodes.includes(start.value)){
+                nodes.push(start.value);
+                dfs(start,graph,nodes);
             }
         });
     }
     else{
         return
     }
-    return traversed;
-    
+    return nodes;
 }
 
 function execute(callback){
@@ -57,7 +56,7 @@ function execute(callback){
         callback({
             message: 'The nodes in this graph are: ',
             data: JSON.stringify({
-                bfs : bfsResult.nodes,
+                bfs : bfsResult,
                 dfs : dfsResult
             }),
             type: 'success'
